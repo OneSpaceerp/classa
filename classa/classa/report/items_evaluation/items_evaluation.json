@@ -1,0 +1,105 @@
+{
+ "add_total_row": 1,
+ "columns": [],
+ "creation": "2022-02-20 16:52:00.736836",
+ "disable_prepared_report": 1,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "sinv",
+ "modified": "2022-02-20 16:52:00.736836",
+ "modified_by": "Administrator",
+ "module": "Classa",
+ "name": "Items Evaluation",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Sales Invoice",
+ "report_name": "Items Evaluation",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "Non Profit Member"
+  },
+  {
+   "role": "Sales Auditor"
+  },
+  {
+   "role": "H Role"
+  },
+  {
+   "role": "Chain And LG Sales Manger"
+  },
+  {
+   "role": "Stock Auditor"
+  },
+  {
+   "role": "Stock Manager"
+  },
+  {
+   "role": "All"
+  },
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Dashboard Manager"
+  },
+  {
+   "role": "Stock User"
+  },
+  {
+   "role": "Accounts User"
+  },
+  {
+   "role": "Accounts Manager"
+  },
+  {
+   "role": "Employee Self Service"
+  },
+  {
+   "role": "AR Accountant"
+  },
+  {
+   "role": "Sales Manager"
+  },
+  {
+   "role": "Auditor"
+  },
+  {
+   "role": "Sales User"
+  },
+  {
+   "role": "Retail And Gas Station Sales User"
+  },
+  {
+   "role": "Chains And LG Sales User"
+  },
+  {
+   "role": "Retail And Gas Station Sales Manger"
+  },
+  {
+   "role": "Chains & LG Sales Supervisor"
+  },
+  {
+   "role": "Retail & Gas Stations Sales Supervisor"
+  },
+  {
+   "role": "Chains AR"
+  },
+  {
+   "role": "Retail AR"
+  },
+  {
+   "role": "CRM User"
+  },
+  {
+   "role": "Branch Accountant"
+  },
+  {
+   "role": "Physician"
+  }
+ ]
+}
