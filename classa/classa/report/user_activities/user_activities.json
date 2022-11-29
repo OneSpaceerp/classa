@@ -1,0 +1,30 @@
+{
+ "add_total_row": 1,
+ "columns": [],
+ "creation": "2021-12-15 13:16:30.676876",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2021-12-15 13:40:13.998757",
+ "modified_by": "Administrator",
+ "module": "Classa",
+ "name": "User Activities",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "select \r\n    `tabUser`.name as \"Employee:Link/User:2\",\r\n    `tabUser`.full_name as \"Employee Name\",\r\n            (select count(name) from `tabMaterial Request` where owner = `tabUser`.name and date(`tabMaterial Request`.creation) = %(date)s) as \"Material Request\",\r\n            (select count(name) from `tabPurchase Order` where owner = `tabUser`.name and date(`tabPurchase Order`.creation) = %(date)s) as \"Purchase Orders\",\r\n            (select count(name) from `tabPurchase Receipt` where owner = `tabUser`.name and date(`tabPurchase Receipt`.creation)= %(date)s) as \"Purchase Receipt\",\r\n            (select count(name) from `tabPurchase Invoice` where owner = `tabUser`.name and date(`tabPurchase Invoice`.creation)= %(date)s) as \"Purchase Invoice\",\r\n            (select count(name) from `tabPayment Entry` where owner = `tabUser`.name and date(`tabPayment Entry`.creation)=%(date)s) as \"Payment Entry\",\r\n            (select count(name) from `tabStock Entry` where owner = `tabUser`.name and date(`tabStock Entry`.creation) = %(date)s) as \"Stock Entry\",\r\n            (select count(name) from `tabSales Order` where owner = `tabUser`.name and date(`tabSales Order`.creation)=%(date)s) as \"Sales Order\",\r\n            (select count(name) from `tabDelivery Note` where owner = `tabUser`.name and date(`tabDelivery Note`.creation)= %(date)s) as \"Delivery Note\",\r\n            (select count(name) from `tabSales Invoice` where owner = `tabUser`.name and date(`tabSales Invoice`.creation) = %(date)s) as \"Sales Invoice\",\r\n            (select count(name) from `tabJournal Entry` where owner = `tabUser`.name and date(`tabJournal Entry`.creation)= %(date)s) as \"Journal Entry\",\r\n            (select count(name) from `tabVehicle Log` where owner = `tabUser`.name and date(`tabVehicle Log`.creation) = %(date)s) as \"Vehicle Log\",\r\n            (select count(name) from `tabEmployee Advance` where owner = `tabUser`.name and date(`tabEmployee Advance`.creation) = %(date)s) as \"Employee Advance\",\r\n            (select count(name) from `tabExpense Claim` where owner = `tabUser`.name and date(`tabExpense Claim`.creation) = %(date)s) as \"Expense Claim\",\r\n\t\t\t(\r\n\t\t\t\r\n\t\t\t(select count(name) from `tabMaterial Request` where owner = `tabUser`.name and date(`tabMaterial Request`.creation) = %(date)s) +\r\n            (select count(name) from `tabPurchase Order` where owner = `tabUser`.name and date(`tabPurchase Order`.creation) = %(date)s) +\r\n            (select count(name) from `tabPurchase Receipt` where owner = `tabUser`.name and date(`tabPurchase Receipt`.creation)= %(date)s) +\r\n            (select count(name) from `tabPurchase Invoice` where owner = `tabUser`.name and date(`tabPurchase Invoice`.creation)= %(date)s) +\r\n            (select count(name) from `tabPayment Entry` where owner = `tabUser`.name and date(`tabPayment Entry`.creation)=%(date)s) +\r\n            (select count(name) from `tabStock Entry` where owner = `tabUser`.name and date(`tabStock Entry`.creation) = %(date)s)+\r\n            (select count(name) from `tabSales Order` where owner = `tabUser`.name and date(`tabSales Order`.creation)=%(date)s) +\r\n            (select count(name) from `tabDelivery Note` where owner = `tabUser`.name and date(`tabDelivery Note`.creation)= %(date)s)+\r\n            (select count(name) from `tabSales Invoice` where owner = `tabUser`.name and date(`tabSales Invoice`.creation) = %(date)s) +\r\n            (select count(name) from `tabJournal Entry` where owner = `tabUser`.name and date(`tabJournal Entry`.creation)= %(date)s) +\r\n            (select count(name) from `tabVehicle Log` where owner = `tabUser`.name and date(`tabVehicle Log`.creation) = %(date)s) +\r\n            (select count(name) from `tabEmployee Advance` where owner = `tabUser`.name and date(`tabEmployee Advance`.creation) = %(date)s)+\r\n            (select count(name) from `tabExpense Claim` where owner = `tabUser`.name and date(`tabExpense Claim`.creation) = %(date)s) \r\n\t\t\t\r\n\t\t\t) as \"Total\"\r\nfrom \r\n    `tabUser`",
+ "ref_doctype": "User",
+ "report_name": "User Activities",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Employee Self Service"
+  }
+ ]
+}

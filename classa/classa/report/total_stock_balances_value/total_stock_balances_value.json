@@ -1,0 +1,55 @@
+{
+ "add_total_row": 1,
+ "columns": [],
+ "creation": "2022-02-07 06:02:43.047114",
+ "disable_prepared_report": 1,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "sinv",
+ "modified": "2022-02-07 13:56:29.503140",
+ "modified_by": "Administrator",
+ "module": "Classa",
+ "name": "Total Stock Balances Value",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "select  \r\n tabItem.item_code as \"Item:Link/Item:60\",\r\n (select barcode from `tabItem Barcode` where parent = tabItem.item_code) as \"Barcode:Data:130\",\r\n tabItem.item_name as \"Item Name:Data:300\",\r\n tabItem.item_group as \"Item Group:Data:120\",\r\n (select IFNULL(sum(tabBin.actual_qty),0) from `tabBin` where tabBin.item_code = tabItem.item_code) as \"\u0642\u0637\u0639\u0629:Float:100\",\r\n IFNULL(((select sum(tabBin.actual_qty) from `tabBin` where tabBin.item_code = tabItem.item_code)/(select conversion_factor from `tabUOM Conversion Detail` where uom = '\u0639\u0644\u0628\u0647' and parent = tabItem.item_code)),0) as \"\u0639\u0644\u0628\u0629:Float:100\",\r\n IFNULL(((select sum(tabBin.actual_qty) from `tabBin` where tabBin.item_code = tabItem.item_code)/(select conversion_factor from `tabUOM Conversion Detail` where uom = '\u0643\u0631\u062a\u0648\u0646\u0647' and parent = tabItem.item_code)),0) as \"\u0643\u0631\u062a\u0648\u0646\u0629:Float:100\",\r\n (select IFNULL(max(tabBin.valuation_rate),0) from `tabBin` where tabBin.item_code = tabItem.item_code) as \"Value:Float:120\",\r\n((select IFNULL(sum(tabBin.actual_qty),0) from `tabBin` where tabBin.item_code = tabItem.item_code) *(select IFNULL(avg(tabBin.valuation_rate),0) from `tabBin` where tabBin.item_code = tabItem.item_code)) as \"Total Value:Float:120\",\r\n (select IFNULL(sum(tabBin.reserved_qty),0) from `tabBin` where tabBin.item_code = tabItem.item_code) as \"Reserved Qty:Float:120\",\r\n (select IFNULL(sum(tabBin.ordered_qty),0) from `tabBin` where tabBin.item_code = tabItem.item_code) as \"Ordered Qty:Float:120\",\r\n (select IFNULL(sum(tabBin.indented_qty),0) from `tabBin` where tabBin.item_code = tabItem.item_code) as \"Requested Qty:Float:120\",\r\n (select IFNULL(sum(tabBin.projected_qty),0) from `tabBin` where tabBin.item_code = tabItem.item_code) as \"Projected Qty:Float:120\"\r\nfrom\r\ntabItem\r\nwhere\r\ntabItem.has_variants = 0",
+ "ref_doctype": "Bin",
+ "report_name": "Total Stock Balances Value",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "Stock Auditor"
+  },
+  {
+   "role": "H Role"
+  },
+  {
+   "role": "Purchase User"
+  },
+  {
+   "role": "Stock Manager"
+  },
+  {
+   "role": "Sales Manager"
+  },
+  {
+   "role": "Purchase Manager"
+  },
+  {
+   "role": "Sales User"
+  },
+  {
+   "role": "Stock User"
+  },
+  {
+   "role": "Branch Accountant"
+  },
+  {
+   "role": "All"
+  }
+ ]
+}
