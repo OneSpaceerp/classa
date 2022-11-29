@@ -1,0 +1,30 @@
+{
+ "add_total_row": 1,
+ "columns": [],
+ "creation": "2021-11-28 18:05:23.852664",
+ "disable_prepared_report": 1,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2021-11-29 15:37:14.857305",
+ "modified_by": "Administrator",
+ "module": "Classa",
+ "name": "Blanket Orders Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT\n`tabBlanket Order`.name as \"Blanket Order:Link/Blanket Order:180\",\n`tabBlanket Order`.blanket_order_type as \"Type::100\",\n`tabBlanket Order`.party_name as \"Party Name::180\",\n`tabBlanket Order`.from_date as \"From Date::120\",\n`tabBlanket Order`.to_date as \"To Date::120\",\n`tabBlanket Order`.default_price_list as \"Price List::140\",\n`tabBlanket Order Item`.item_code as \"Item Code:Link/Item:90\",\n`tabBlanket Order Item`.item_name as \"Item Name::300\",\n`tabBlanket Order Item`.stock_qty as \"Qty::60\",\n`tabBlanket Order Item`.stock_uom as \"UOM::60\",\n`tabBlanket Order Item`.rate as \"Rate:Currency:110\",\n`tabBlanket Order Item`.amount as \"Amount:Currency:110\",\n`tabBlanket Order Item`.ordered_qty as \"Ordered Qty:110\",\n(`tabBlanket Order Item`.qty - `tabBlanket Order Item`.ordered_qty) as \"Remaining Qty:130\",\n(`tabBlanket Order Item`.ordered_qty/ `tabBlanket Order Item`.qty)*100 as \"Progress:Percent:130\"\n\n\nFROM\n`tabBlanket Order` JOIN `tabBlanket Order Item` ON `tabBlanket Order`.name = `tabBlanket Order Item`.parent\nWHERE\n`tabBlanket Order Item`.`parent` = `tabBlanket Order`.`name`\nand `tabBlanket Order`.docstatus = 1\n\nORDER BY `tabBlanket Order`.name desc",
+ "ref_doctype": "Blanket Order",
+ "report_name": "Blanket Orders Report",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "AR Accountant"
+  }
+ ]
+}
