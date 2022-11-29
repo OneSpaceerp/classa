@@ -1,0 +1,29 @@
+{
+ "attach_print": 0,
+ "channel": "System Notification",
+ "condition": "doc.workflow_state == \"Accounts Manager Approved\"",
+ "creation": "2021-11-25 11:17:40.252681",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Payment Entry",
+ "enabled": 1,
+ "event": "Value Change",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "Payment Entry Status Is Accounts Manager Approved & Requires Your Approval !!!",
+ "modified": "2021-11-25 14:20:49.042638",
+ "modified_by": "Administrator",
+ "module": "Classa",
+ "name": "Accounts Manager Approved PE",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_role": "System Manager Notification"
+  }
+ ],
+ "send_system_notification": 1,
+ "send_to_all_assignees": 0,
+ "subject": "{{ doc.name }} Is Approved By The Accounts Manager",
+ "value_changed": "workflow_state"
+}

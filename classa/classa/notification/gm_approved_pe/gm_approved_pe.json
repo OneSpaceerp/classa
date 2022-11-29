@@ -1,0 +1,29 @@
+{
+ "attach_print": 0,
+ "channel": "System Notification",
+ "condition": "doc.workflow_state == \"GM Approved\"",
+ "creation": "2021-11-25 11:11:53.995969",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Payment Entry",
+ "enabled": 1,
+ "event": "Value Change",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "Payment Entry Status Is GM Manager Approved & Requires Your Approval !!!",
+ "modified": "2021-11-25 14:20:42.251119",
+ "modified_by": "Administrator",
+ "module": "Classa",
+ "name": "GM Approved PE",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_role": "Cash"
+  }
+ ],
+ "send_system_notification": 1,
+ "send_to_all_assignees": 0,
+ "subject": "{{ doc.name }} Is Approved By GM",
+ "value_changed": "workflow_state"
+}
