@@ -1,0 +1,93 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2021-10-30 21:02:26.791009",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "month",
+  "column_break_2",
+  "total_target",
+  "section_break_4",
+  "tier_1_amount",
+  "tier_2_amount",
+  "tier_3_amount",
+  "column_break_8",
+  "tier_1_percent",
+  "tier_2_percent",
+  "tier_3_percent"
+ ],
+ "fields": [
+  {
+   "fieldname": "month",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Month",
+   "options": "\nJAN\nFEB\nMAR\nAPR\nMAY\nJUN\nJUL\nAUG\nSEP\nOCT\nNOV\nDEC"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_target",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total Target"
+  },
+  {
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "tier_1_amount",
+   "fieldtype": "Float",
+   "label": "Tier 1 Amount %75",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tier_2_amount",
+   "fieldtype": "Float",
+   "label": "Tier 2 Amount %25",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tier_3_amount",
+   "fieldtype": "Float",
+   "label": "Tier 3 Amount >%100",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tier_1_percent",
+   "fieldtype": "Float",
+   "label": "Tier 1 Percent %"
+  },
+  {
+   "fieldname": "tier_2_percent",
+   "fieldtype": "Float",
+   "label": "Tier 2 Percent %"
+  },
+  {
+   "fieldname": "tier_3_percent",
+   "fieldtype": "Float",
+   "label": "Tier 3 Percent %"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2021-10-30 21:06:57.966774",
+ "modified_by": "Administrator",
+ "module": "Classa",
+ "name": "Commission Schedule",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

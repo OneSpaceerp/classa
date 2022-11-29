@@ -1,0 +1,305 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2021-10-16 17:11:12.650747",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_8",
+  "naming_series",
+  "from_date",
+  "to_date",
+  "accrual_account",
+  "commission_account",
+  "payment_account",
+  "column_break_7",
+  "sales_chanel",
+  "pay_to",
+  "employee",
+  "cost_center",
+  "amended_from",
+  "commission_table_section",
+  "commission_details",
+  "commission_section_section",
+  "total_target",
+  "total_achieved",
+  "total_payable_commission",
+  "amount_column",
+  "tier_1_amount",
+  "tier_2_amount",
+  "tier_3_amount",
+  "percent_column",
+  "tier_1_percent",
+  "tier_2_percent",
+  "tier_3_percent",
+  "actual_commission_column",
+  "tier_1_commission",
+  "tier_2_commission",
+  "tier_3_commission"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "COM-"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pay_to",
+   "fieldtype": "Select",
+   "label": "Pay To",
+   "options": "Sales Person\nSales Supervisor\nTerritory Manager\nSales Manager"
+  },
+  {
+   "fieldname": "commission_table_section",
+   "fieldtype": "Section Break",
+   "label": "Commission Table"
+  },
+  {
+   "fieldname": "commission_details",
+   "fieldtype": "Table",
+   "label": "Commission Details",
+   "options": "Commission Table"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Commission Payment",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Commission Payment",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "To Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sales_chanel",
+   "fieldtype": "Select",
+   "label": "Sales Chanel",
+   "options": "\nRetail\nChains",
+   "reqd": 1
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Sales Person",
+   "reqd": 1
+  },
+  {
+   "fieldname": "accrual_account",
+   "fieldtype": "Link",
+   "label": "Accrual Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "commission_account",
+   "fieldtype": "Link",
+   "label": "Commission Account",
+   "options": "Account"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "payment_account",
+   "fieldtype": "Link",
+   "label": "Payment Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "commission_section_section",
+   "fieldtype": "Section Break",
+   "label": "<b>Commission Section</b>"
+  },
+  {
+   "bold": 1,
+   "fetch_from": "employee.total_target",
+   "fieldname": "total_target",
+   "fieldtype": "Float",
+   "label": "Total Target",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "amount_column",
+   "fieldtype": "Column Break",
+   "label": "<b>Amount</b>"
+  },
+  {
+   "fetch_from": "employee.tier_1_amount",
+   "fieldname": "tier_1_amount",
+   "fieldtype": "Float",
+   "label": "Tier 1 Amount %75",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.tier_2_amount",
+   "fieldname": "tier_2_amount",
+   "fieldtype": "Float",
+   "label": "Tier 2 Amount %25",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.tier_3_amount",
+   "fieldname": "tier_3_amount",
+   "fieldtype": "Float",
+   "label": "Tier 3 Amount > %100",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "percent_column",
+   "fieldtype": "Column Break",
+   "label": "<b>Percent</b>"
+  },
+  {
+   "fetch_from": "employee.tier_1_percent",
+   "fieldname": "tier_1_percent",
+   "fieldtype": "Float",
+   "label": "Tier 1 Percent %",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.tier_2_percent",
+   "fieldname": "tier_2_percent",
+   "fieldtype": "Float",
+   "label": "Tier 2 Percent %",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.tier_3_percent",
+   "fieldname": "tier_3_percent",
+   "fieldtype": "Float",
+   "label": "Tier 3 Percent %",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "actual_commission_column",
+   "fieldtype": "Column Break",
+   "label": "<b>Actual Commission</b>"
+  },
+  {
+   "fieldname": "tier_1_commission",
+   "fieldtype": "Float",
+   "label": "Tier 1 Commission",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tier_2_commission",
+   "fieldtype": "Float",
+   "label": "Tier 2 Commission",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tier_3_commission",
+   "fieldtype": "Float",
+   "label": "Tier 3 Commission",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_achieved",
+   "fieldtype": "Float",
+   "label": "Total Achieved ",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_payable_commission",
+   "fieldtype": "Float",
+   "label": "Total Payable Commission",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Journal Entry",
+   "link_fieldname": "reference_link"
+  }
+ ],
+ "modified": "2021-10-25 12:44:49.159274",
+ "modified_by": "Administrator",
+ "module": "Classa",
+ "name": "Commission Payment",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts User",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "employee",
+ "track_changes": 1
+}
