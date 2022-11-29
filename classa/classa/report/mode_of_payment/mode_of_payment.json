@@ -1,0 +1,98 @@
+{
+ "add_total_row": 1,
+ "columns": [],
+ "creation": "2021-12-20 19:01:36.353706",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date",
+   "mandatory": 1,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date",
+   "mandatory": 1,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "mode_of_payment",
+   "fieldtype": "Link",
+   "label": "Mode of Payment",
+   "mandatory": 1,
+   "options": "Mode of Payment",
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2022-01-05 19:25:06.284015",
+ "modified_by": "Administrator",
+ "module": "Classa",
+ "name": "Mode OF Payment",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "select\n `tabPayment Entry`.`name` as \"Payment Entry:Link/Payment Entry:150\",\n `tabPayment Entry`.`posting_date` as \"Date:Date\", \n `tabPayment Entry`.payment_type as \"Payment Type::120\",\n `tabPayment Entry`.`mode_of_payment` as \"Mode of Payment:Data:150\",\n  `tabPayment Entry`.`mode_of_payment_2` as \"To Mode of Payment:Data:150\",\n `tabPayment Entry`.`party_type` as \"Party Type::100\",\n `tabPayment Entry`.party as \"Party::120\",\n `tabPayment Entry`.party_name as \"Party Name::250\",\n IF(`tabPayment Entry`.payment_type=\"Internal Transfer\", -1 * `tabPayment Entry`.paid_amount, `tabPayment Entry`.paid_amount) as \"Paid Amount:Currency:120\"\n\nfrom\n`tabPayment Entry`where\n`tabPayment Entry`.docstatus = 1\n and `tabPayment Entry`.posting_date between %(from_date)s and %(to_date)s\n and `tabPayment Entry`.mode_of_payment = %(mode_of_payment)s\n",
+ "ref_doctype": "Payment Entry",
+ "report_name": "Mode OF Payment",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "H Role"
+  },
+  {
+   "role": "Chains And LG Sales User"
+  },
+  {
+   "role": "Retail And Gas Station Sales User"
+  },
+  {
+   "role": "Accounts User"
+  },
+  {
+   "role": "Sales User"
+  },
+  {
+   "role": "Sales Manager"
+  },
+  {
+   "role": "Accounts Manager"
+  },
+  {
+   "role": "Sales Auditor"
+  },
+  {
+   "role": "AR Accountant"
+  },
+  {
+   "role": "Auditor"
+  },
+  {
+   "role": "Purchase Manager"
+  },
+  {
+   "role": "Chains AR"
+  },
+  {
+   "role": "Retail AR"
+  },
+  {
+   "role": "Cash Collector"
+  },
+  {
+   "role": "Main Cash"
+  },
+  {
+   "role": "Retail And Gas Station Sales Manger"
+  },
+  {
+   "role": "Branch Accountant"
+  }
+ ]
+}
